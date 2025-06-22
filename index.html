@@ -9,6 +9,16 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- 
+    Chosen Palette: "Warm Neutral" - A palette using a soft off-white background (#F8F7F4), dark slate for text (#334155), and a calming teal (#14B8A6) for accents and interactive elements. This creates a professional, modern, and harmonious feel that is easy on the eyes.
+    Application Structure Plan: A single-page application with a fixed navigation header for easy access to key sections (About, Projects, Experience, Skills). The structure is designed for a hiring manager's user flow, starting with a strong "About Me" introduction, followed by a deep dive into "Projects" as the main showcase, then "Professional Experience," and concluding with a scannable "Technical Skills" section. This non-linear but guided structure allows users to either scroll through the narrative or jump directly to the information they find most relevant, maximizing usability and impact.
+    Visualization & Content Choices:
+    - Report Info: "Media Browser Application" with "aggregate statistics in a dashboard". Goal: Demonstrate backend optimization skills. Viz/Method: Textual description of the achievement with a code snippet placeholder. Interaction: None. Justification: Focuses on the most impressive and quantifiable achievement (30% query reduction) which is more relevant for a data-focused role than a UI demo.
+    - Report Info: "Song Vocal Syllable Transcriber" model architecture. Goal: Visually explain a complex technical process simply. Viz/Method: A flowchart created with styled HTML/CSS divs and Tailwind. Interaction: None, static visual aid. Justification: Avoids using images/SVG while still providing a clear, professional-looking diagram that clarifies the project's technical depth.
+    - Report Info: Technical Skills list. Goal: Make skills easily scannable and visually appealing. Viz/Method: Grouped lists with skills presented as styled "pills" or "tags" using HTML/CSS and Tailwind. Interaction: None, static display. Justification: Enhances readability and visual organization compared to a plain text list, making it easier for a recruiter to quickly assess technical qualifications.
+    CONFIRMATION: NO SVG graphics used. NO Mermaid JS used.
+    -->
 
     <style>
         body {
@@ -90,7 +100,7 @@
         <section id="projects" class="py-16 md:py-24 bg-teal-50/50">
             <div class="container mx-auto px-6">
                 <h2 class="text-3xl md:text-4xl font-bold text-center text-slate-800 mb-12">Projects</h2>
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12">
+                <div class="max-w-4xl mx-auto grid grid-cols-1 gap-8 md:gap-12">
                     
                     <div class="project-card bg-white p-8 rounded-xl shadow-md flex flex-col">
                         <h3 class="text-2xl font-bold text-teal-600 mb-2">Song Vocal Syllable Transcriber</h3>
@@ -136,25 +146,58 @@
                     </div>
 
                     <div class="project-card bg-white p-8 rounded-xl shadow-md flex flex-col">
-                        <h3 class="text-2xl font-bold text-teal-600 mb-2">Media Browser Application</h3>
-                        <p class="text-slate-500 mb-4">A full-stack app for media discovery and tracking user statistics.</p>
+                        <h3 class="text-2xl font-bold text-teal-600 mb-2">Polysolve Calculator</h3>
+                        <p class="text-slate-500 mb-4">An LLM-powered calculator for solving multi-step word problems.</p>
                         <div class="flex-grow">
-                             <div class="flex border-b mb-4">
-                                <button data-tab-target="media-overview" class="tab-button active-tab py-2 px-4 font-medium rounded-t-lg">Overview</button>
-                                <button data-tab-target="media-role" class="tab-button inactive-tab py-2 px-4 font-medium rounded-t-lg">My Role</button>
+                            <div class="flex border-b mb-4">
+                                <button data-tab-target="polysolve-overview" class="tab-button active-tab py-2 px-4 font-medium rounded-t-lg">Overview</button>
+                                <button data-tab-target="polysolve-role" class="tab-button inactive-tab py-2 px-4 font-medium rounded-t-lg">My Role</button>
+                                <button data-tab-target="polysolve-arch" class="tab-button inactive-tab py-2 px-4 font-medium rounded-t-lg">Architecture</button>
                             </div>
                             <div class="tab-content">
-                                <div id="media-overview" class="prose prose-slate max-w-none">
-                                    <p>Our team (3 members) aimed to create a centralized hub for media discovery and tracking. The application serves as a personalized dashboard for users to organize media they are interested in and gain insights into their own consumption patterns.</p>
-                                    <p><strong>Technologies:</strong> Python, PostgreSQL, React, SQL</p>
+                                <div id="polysolve-overview" class="prose prose-slate max-w-none">
+                                    <p>In a two-person team, we created a novel calculator capable of parsing multi-step word problems and generating verifiable, step-by-step solutions. The system leverages a bipartite graph to map relationships between variables and equations.</p>
+                                    <p><strong>Technologies:</strong> Python, Rust, Slurm, Large Language Models (LLMs)</p>
                                 </div>
-                                <div id="media-role" class="hidden prose prose-slate max-w-none">
+                                <div id="polysolve-role" class="hidden prose prose-slate max-w-none">
+                                     <p>My core contributions focused on the machine learning and research aspects of the project:</p>
                                     <ul>
-                                        <li><strong>Backend & Database Optimization:</strong> I was primarily responsible for the backend logic and database architecture. I designed the PostgreSQL schema and implemented key optimizations, such as creating <strong>sorted indexes and pagination</strong>, which successfully <strong>reduced database query times by 30%</strong>.</li>
-                                        <li><strong>Dashboard & Statistics:</strong> I developed the logic for the user dashboard, which calculated and displayed aggregate statistics, turning raw user data into understandable and interesting visualizations.</li>
+                                        <li><strong>LLM Implementation:</strong> I utilized a Large Language Model to parse key information and relationships from unstructured word problems.</li>
+                                        <li><strong>HPC Management:</strong> I was responsible for hosting and fine-tuning the model on WPI's Turing High Performance Computing (HPC) cluster, managing resources and jobs using Slurm.</li>
+                                        <li><strong>SOTA Research:</strong> I conducted comparative research on the reasoning capabilities of State-Of-The-Art (SOTA) LLMs to benchmark our approach.</li>
                                     </ul>
                                 </div>
+                                 <div id="polysolve-arch" class="hidden prose prose-slate max-w-none">
+                                     <p>The system follows a logical pipeline from problem to solution:</p>
+                                    <div class="flex flex-wrap items-center justify-start gap-2 text-center text-xs mt-2">
+                                        <div class="bg-white border-2 border-teal-200 p-2 rounded-md shadow-sm">Word Problem</div>
+                                        <div class="font-semibold text-teal-500">&rarr;</div>
+                                        <div class="bg-white border-2 border-teal-200 p-2 rounded-md shadow-sm">LLM Parser</div>
+                                        <div class="font-semibold text-teal-500">&rarr;</div>
+                                        <div class="bg-white border-2 border-teal-200 p-2 rounded-md shadow-sm">Bipartite Graph</div>
+                                        <div class="font-semibold text-teal-500">&rarr;</div>
+                                        <div class="bg-white border-2 border-teal-200 p-2 rounded-md shadow-sm">Solution Steps</div>
+                                    </div>
+                                </div>
                             </div>
+                        </div>
+                         <div class="mt-6 flex space-x-6">
+                            <a href="polysolve_paper.pdf" target="_blank" class="nav-link text-teal-600 font-medium hover:text-teal-700">Read Paper (PDF)</a>
+                        </div>
+                    </div>
+
+                    <div class="project-card bg-white p-8 rounded-xl shadow-md flex flex-col">
+                        <h3 class="text-2xl font-bold text-teal-600 mb-2">Media Browser Application</h3>
+                        <p class="text-slate-500 mb-4">A full-stack app for media discovery and tracking user statistics.</p>
+                        <div class="flex-grow prose prose-slate max-w-none">
+                            <p>As part of a three-person team, we built a full-stack application to serve as a centralized hub for media discovery and tracking. Users could discover media, add items to custom lists, and view aggregate statistics on a dashboard.</p>
+                            <p><strong>My Key Contribution:</strong> I owned the backend and database architecture. My primary focus was on performance and efficiency, leading me to design and implement key optimizations.</p>
+                            <div class="mt-4 bg-slate-50 p-4 rounded-lg">
+                                <p class="font-semibold text-slate-700">Achievement Spotlight:</p>
+                                <p class="text-teal-600 text-lg font-bold">Reduced Database Query Times by 30%</p>
+                                <p class="text-sm text-slate-500">I accomplished this by implementing sorted indexes and database pagination, which significantly improved the application's responsiveness when fetching large sets of media data.</p>
+                            </div>
+                            <p class="mt-4"><strong>Technologies:</strong> Python, PostgreSQL, React, SQL</p>
                         </div>
                     </div>
 
